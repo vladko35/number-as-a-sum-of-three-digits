@@ -1,0 +1,17 @@
+// Въвеждане на число и извеждането му като сума от три числа (трите числа не се повтарят с разменяне)
+#include <iostream>
+using namespace std;
+int main ()
+{
+	unsigned number = 0, k = 0;
+	cout<<"Input a number: ";
+	cin>>number;
+	for (int i = 1; i <= number / 3; i++) // делим числото на три
+		for (int j = i + 1; j <= (number - i) / 2; j++) // делим числото на две минус първото число
+		{
+			k = number - i - j; // третото число е винаги по-голямо от първите две, трите числа са в нарастващ ред
+			if (k > i && k > j)
+				cout<<i<<"+"<<j<<"+"<<k<<" = "<<number<<endl;
+		}
+	return 0;
+}
